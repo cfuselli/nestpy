@@ -59,7 +59,10 @@ PYBIND11_MODULE(nestpy, m)
 		.def_readwrite("photons", &NEST::QuantaResult::photons)
 		.def_readwrite("electrons", &NEST::QuantaResult::electrons)
 		.def_readwrite("ions", &NEST::QuantaResult::ions)
-		.def_readwrite("excitons", &NEST::QuantaResult::excitons);
+		.def_readwrite("excitons", &NEST::QuantaResult::excitons)
+		.def_readwrite("variance", &NEST::QuantaResult::Variance)
+		.def_readwrite("recomb_prob", &NEST::QuantaResult::recombProb);
+		
 
 	//	Binding for NESTresult struct
 	py::class_<NEST::NESTresult>(m, "NESTresult", py::dynamic_attr())
